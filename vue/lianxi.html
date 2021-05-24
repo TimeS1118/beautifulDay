@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="mes" @keyup.enter="show">
+    <label v-model="mes2">{{mes2}}</label>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var app=new Vue({
+    el:"#app",
+    data:{
+      message:["第一条","第二条"],
+        mes:"001",
+        mes2:[]
+    },
+    methods:{
+        show:function (){
+            this.mes2.push(this.mes)
+            alert(1)
+        }
+    }
+  })
+</script>
+</body>
+</html>

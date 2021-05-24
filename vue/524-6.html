@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <input type="button" value="add" @click="add">
+  <input type="button" value="remove" @click="remove">
+  <ul>
+    <li v-for="(it,index) in arr">
+      {{index+1}}校区：{{it}}
+    </li>
+  </ul>
+  <h2 v-for="i in food" :title="i.name">
+    {{i.name}}
+  </h2>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var app=new Vue({
+    el:"#app",
+    data:{
+      message:"wo~",
+      arr:["北京","上海","深圳","广州"],
+      food:[
+        {name:"西兰花"},
+        {name:"西瓜"}]
+    },
+    methods:{
+      add:function (){
+        this.food.push({name:"花菜"})
+      },
+      remove:function (){
+        this.food.pop()
+      }
+    }
+  })
+</script>
+</body>
+</html>

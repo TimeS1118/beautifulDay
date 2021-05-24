@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>-->
+</head>
+<body>
+<div id="app">
+    <input type="button" value="事件绑定" @click="doit">
+    <input type="button" value="事件绑定" v-on:dblclick="doit">
+    <h2 @click="change">{{food}}</h2>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: "#app",
+        methods: {
+            doit: function () {
+                alert("doit")
+            },
+            change:function (){
+               this.food+="好好吃"
+            }
+        },
+        data:{
+            food:"西兰花"
+        }
+
+    })
+</script>
+</body>
+</html>
